@@ -12,31 +12,52 @@
 	</head>
 	
 	<body>
-		
+	
 		<header>
 			<h1>Living Styleguide</h1>
 
-			<nav>
+			<nav id="menu">
 
 			    <h2>Main navigation</h2>
 
 			    <ul>
-			        <li><a href="#main-content" aria-label="Home, current page">Home</a></li>
-			        <li>
-			            <a href="/products">Products</a>
-
-			            <ul>
+			        <li><a href="#" aria-label="Home, current page">Home</a></li>
+			        <li><a href="/products">Products</a>
+						<ul>
 			                <li><a href="/products/rock">Rock</a></li>
 			                <li><a href="/products/paper">Paper</a></li>
-			                <li><a href="/products/scissors">Scissors</a></li>
+							<li><a href="/products/scissors">Scissors</a></li>
 			            </ul>
 
 			        </li>
-			        <li><a href="/about">About</a></li>
-			        <li><a href="/contact">Contact</a></li>
-			    </ul>
+					<li><a href="/about">About</a></li>
+					<li><a href="#login">Login</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
 			</nav>
+			<a href="#menu">X</a>
 		</header>
+		
+		<div id="login">
+			<form action="" method="post">
+				<a href="#login-away">X</a>
+				<label for="field-email">Email</label>
+				<input placeholder="E-mail" type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
+							
+				<label for="field-password">Password</label>
+				<input placeholder="Wachtwoord" type="password" id="field-password" name="field-password" required>
+								
+				<div>
+					<input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+					<label for="field-stay-logged-in">Stay logged in</label>
+				</div>
+
+				<button type="submit">Login</button>
+
+				<a href="" rel="forgot">Forgot password</a>
+							
+			</form>
+		</div>
 		
 		<main>
 
@@ -58,22 +79,6 @@
 					</figcaption>
 				</figure>
 			</article>
-			
-			<form action="" method="post">
-
-			    <label for="field-email">Email</label>
-			    <input type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>
-
-			    <label for="field-password">Password</label>
-			    <input type="password" id="field-password" name="field-password" required>
-
-			    <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
-			    <label for="field-stay-logged-in">Stay logged in</label>
-
-			    <a href="/">Forgot password</a>
-
-			    <button type="submit">Login</button>
-			</form>
 
 			<ol>
 			    <li>
@@ -110,16 +115,15 @@
 			            <p data-status="DELIVERED">Has been delivered</p>
 			        </footer>
 
-			    </li>
+				</li>
+				<form action="" method="post">
+
+					<label for="field-message">Message</label>
+					<textarea name="field-message" id="field-message"></textarea>
+		
+					<button type="submit">Send</button>
+				</form>
 			</ol>
-
-			<form action="" method="post">
-
-			    <label for="field-message">Message</label>
-			    <textarea name="field-message" id="field-message"></textarea>
-
-			    <button type="submit">Send</button>
-			</form>
 
 			<article>
 				<p><a href="/">HTML5 accessibility, are block links hurting accessibility?</a></p>

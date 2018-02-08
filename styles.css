@@ -3,6 +3,7 @@
 =================================*/
 :root {
 	--main-colour: rgb(38, 232, 242);
+	--standard-shadow: box-shadow: 5px 5px 5px #aaa;
 }
 
 
@@ -64,8 +65,28 @@ table {
 
 @font-face {
 	font-family: amarurgt;
-	src: url('amarurgt.ttf');
+	src: url('fonts/amarurgt.ttf');
 }
+
+@font-face {
+	font-family: caviar dreams;
+	src: url('fonts/CaviarDreams.ttf');
+}
+	
+@font-face {
+	font-family: caviar dreams bold;
+	src: url('fonts/CaviarDreams_Bold.ttf');
+}
+
+@font-face {
+	font-family: caviar dreams italic;
+	src: url('fonts/CaviarDreams_Italic.ttf');
+}
+
+@font-face {
+	font-family: caviar dreams bold italic;
+	src: url('fonts/CaviarDreams_BoldItalic.ttf');	
+}	
 
 main {
 	margin: 1em;
@@ -84,7 +105,8 @@ label,
 time,
 legend,
 footer,
-button {
+button,
+input {
 	font-family: sans-serif;
 }
 
@@ -93,16 +115,24 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: amarurgt, sans-serif;
+	font-family: amarurgt;
 }
 
 h1 {
 	font-size: 45px;
-	text-align: center;
 }
 
 h2 {
 	font-size: 30px;
+}
+
+p,
+a,
+li,
+input,
+label,
+textarea {
+	font-family: sans-serif;
 }
 
 button {
@@ -110,59 +140,20 @@ button {
 	color: black;
 	font-size: 16px;
 	padding: 1em 2em;
-	transition: all .3s ease;
 	font-weight: 700;
 	border: none;
-	box-shadow: 0 #a;
+	box-shadow: 0 #aaa;
+	transition: all .3s ease;
 }
 
 button:focus {
-	box-shadow: 5px 5px 5px #aaa;
+	box-shadow: var(--standard-shadow);
 }
 
 main {
 	display: grid;
-	grid-template-columns: 69vw 25vw;
+	grid-template-columns: 100%;
 	grid-template-rows:50% 50%;
-	grid-column-gap: .5em;
-}
-
-input[type="email"],
-input[type="password"] {
-	border: solid var(--main-colour) .1em;
-	padding: .5em;
-	transition: all .3s ease;
-	font-family: sans-serif;
-	border-radius: 1em;
-}
-
-input[type="email"]:focus,
-input[type="password"]:focus {
-	border: solid black .1em;
-	font-family: sans-serif;
-	box-shadow: 5px 5px 5px #aaa;
-}
-
-main form:nth-of-type(1){
-	border: solid black;
-	max-width: 100vw;
-	padding: 2em;
-}
-
-main form:nth-of-type(1) label {
-	display: block;
-	text-align: center;
-}
-
-main form:nth-of-type(1) label:nth-of-type(1) {
-	margin-top: 1em;
-}
-
-main form:nth-of-type(1) input[type="email"],
-main form:nth-of-type(1) input[type="password"] {
-	display: block;
-	width: 80%;
-	margin: 1em auto;
 }
 
 header nav ul {
@@ -178,7 +169,7 @@ header nav ul li {
 	padding: 2em 0;
 }
 
-header nav ul li a {
+header > nav ul li a {
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 20px;
@@ -198,9 +189,8 @@ header nav h2 {
 }
 
 header nav {
-	height: 100vh;
+	display: none;
 	width: 100%;
-	transition: all .3s ease;
 }
 
 header nav ul ul li {
@@ -235,6 +225,218 @@ fieldset label svg {
 	width: 10vw;
 }
 
+body > div {
+	display: none;
+}
+
+body > input {
+	position: absolute;
+	left: 1em;
+	z-index: 5;
+	border: solid black 1px;
+}
+
+#menu:target {
+	display: block;
+	height: 100vh;
+}
+
+#login:target {
+	display: block;
+	position: fixed;
+}
+
+input[type="email"],
+input[type="password"] {
+	display: block;
+	font-size: 16px;
+	border: solid var(--main-colour) .1em;
+	border-radius: 1em;
+	padding: .2em;
+	text-align: center;
+	margin: 0 auto;
+	width: 80%;
+	transition: all .3s ease;
+	font-weight: 300;
+	font-family: caviar dreams, sans-serif;
+}
+
+form div {
+	display: block;
+	text-align: center;
+	margin: 1em 0;
+}
+
+form div * {
+	text-align: center;
+}
+
+form button {
+	display: block;
+	margin: 0 auto;
+}
+
+header a[href="#menu"] {
+	position: absolute;
+	top: .5em;
+	right: .5em;
+	font-size: 2em;
+	transition: all .3s ease;
+}
+
+header a[href="#menu"]:focus {
+	color: white;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+	border: solid black .1em;
+	box-shadow: var(--standard-shadow)
+}
+
+label[for="field-email"],
+label[for="field-password"] {
+	opacity: 0;
+}
+
+body > div {
+	position: absolute;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	background: rgba(0,0,0,.8);
+}
+
+body > div > form {
+	background-color: white;
+	position: relative;
+	width: 35vw;
+	min-width: 20em; 
+	margin: 0 auto;
+	padding: 3em;
+	margin-top: 5em;
+}
+
+body > div > form > a[href="#login-away"] {
+	position: absolute;
+	right: 1em;
+	top: 1em;
+	font-size: 25px;
+	font-weight: 700;
+}
+
+body > div > form > a[href="#login-away"]:focus {
+	color: var(--main-colour);
+	transition: all .3s ease;
+}
+
+form input[type="checkbox"] {
+	transition: all .3s ease;
+	margin-right: .5em;
+}
+
+form input[type="checkbox"]:focus {
+	box-shadow: var(--standard-shadow)
+}
+
+form a[rel="forgot"] {
+	text-align: center;
+	display: block;
+	margin-top: 1em;
+	transition: all .3s ease;
+}
+
+form a[rel="forgot"]:focus {
+	color: var(--main-colour);
+}
+
+a[for="login"] {
+	cursor: pointer;
+}
+
+/* =========================
+			CHAT
+========================= */
+
+main > ol:nth-of-type(1) li {
+	background-color: var(--main-colour);
+	padding: 1em;
+	margin: 1em 0;
+	border-radius: 1em;
+	width: 70%;
+}
+
+main > ol:nth-of-type(1) li:nth-of-type(2) {
+	background-color: rgba(0, 0, 0, 0.3);
+	margin-left: 20%;
+	right: 0;
+}
+
+main > ol:nth-of-type(1) li footer p,
+main > ol:nth-of-type(1) li footer time {
+	font-weight: 300;
+	color: rgba(0, 0, 0, .8);
+}
+
+main > ol:nth-of-type(1) textarea {
+	border: solid var(--main-colour) 2px;
+	border-radius: 1em;
+	padding: .3em;
+	resize: none;
+	width: calc(100% - 9em);
+	transition: all .3s ease;
+}
+
+main > ol:nth-of-type(1) textarea:focus {
+	border: solid black 2px;
+	box-shadow: var(--standard-shadow)
+}
+
+main > ol:nth-of-type(1) form label {
+	display: none;
+}
+
+main > ol:nth-of-type(1) form textarea {
+	display: inline-block;
+}
+
+main > ol:nth-of-type(1) form button {
+	display: inline-block;
+	margin-bottom: 1em;
+	vertical-align: top;
+	margin-left: 1em;
+}
+
+main > ol:nth-of-type(1) p {
+	margin: 1em 0;
+	font-weight: 700;
+}
+
+main > ol:nth-of-type(1) {
+	margin-top: .9em;
+}
+
+/* =============================
+	THIS PICTURE HAS A TITLE
+============================= */
+
+article:nth-of-type(1) p {
+	line-height: 1.4em;
+	margin: 1em 0;
+}
+
+article:nth-of-type(1) a {
+	color: black;
+	transition: all .3s ease;
+	font-weight: 500;
+}
+
+article:nth-of-type(1) a:focus {
+	color: var(--main-colour);
+	font-weight: 700;
+}
+
 @media screen and (min-width: 48em) {
 	header {
 		display: flex;
@@ -248,10 +450,13 @@ fieldset label svg {
 
 	main {
 		margin-top: 8em;
+		grid-template-columns: 69% 29%;
+		grid-column-gap: 2%; 
 	}
 
 	header nav {
 		height: 4em;
+		display: block;
 	}
 
 	header nav ul {
@@ -277,8 +482,11 @@ fieldset label svg {
 		display: none;
 	}
 
-	main form:nth-of-type(1){
-		border: solid black;
-		padding: 2em;
+	#menu:target {
+		display: block;
+	}
+
+	a[href="#menu"] {
+		display: none;
 	}
 }
