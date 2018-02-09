@@ -3,7 +3,7 @@
 =================================*/
 :root {
 	--main-colour: rgb(38, 232, 242);
-	--standard-shadow: box-shadow: 5px 5px 5px #aaa;
+	--standard-shadow: 5px 5px 5px #aaa;
 }
 
 
@@ -337,7 +337,7 @@ form input[type="checkbox"] {
 }
 
 form input[type="checkbox"]:focus {
-	box-shadow: var(--standard-shadow)
+	box-shadow: var(--standard-shadow);
 }
 
 form a[rel="forgot"] {
