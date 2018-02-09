@@ -1,3 +1,3 @@
-# Components
+# README
 
-Rating example makes use of Emoji from: http://emojione.com
+Live version of the website is on http://rickbuter/nl/cssttr
