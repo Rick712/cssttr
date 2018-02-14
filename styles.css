@@ -112,12 +112,14 @@ h3,
 h4,
 h5,
 h6,
+h1 a,
 h2 a,
 h3 a {
 	font-family: amarurgt, sans-serif;
 }
 
-h1 {
+h1,
+h1 a {
 	font-size: 45px;
 }
 
@@ -168,6 +170,14 @@ header nav ul li {
 	padding: 2em 0;
 }
 
+body > header > h1 {
+	transition: all .3s ease;
+}
+
+body > header > h1 a:focus {
+	color: white;
+}
+
 header > nav ul li a {
 	text-decoration: none;
 	font-weight: 700;
@@ -183,6 +193,31 @@ header {
 	z-index: 1;
 }
 
+header nav > ul > li:first-of-type {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1.2em 1.8em 0 0;
+	background-color: var(--main-colour);
+	z-index: 3;
+}
+
+header nav > ul > li:first-of-type a {
+	border-bottom: 0;
+	font-size: 2em;
+}
+
+header nav > ul > li:first-of-type a:focus {
+	border-bottom: none;
+}
+
+header a[href="#menu"] svg path {
+	transition: all .3s ease;
+}
+
+header a[href="#menu"]:focus svg path {
+	fill: white;
+}
 
 header nav h2 {
 	text-align: center;
@@ -244,6 +279,7 @@ body > input {
 #login:target {
 	display: block;
 	position: fixed;
+	z-index: 5;;
 }
 
 input[type="email"],
@@ -315,7 +351,7 @@ body > div:nth-of-type(1) > form {
 	min-width: 20em; 
 	margin: 0 auto;
 	padding: 3em;
-	margin-top: 5em;
+	margin-top: 12em;
 }
 
 body > div:nth-of-type(1) > form > a[href="#login-away"] {
@@ -355,11 +391,50 @@ a[for="login"] {
 	cursor: pointer;
 }
 
+body > article > fieldset {
+	margin: 1em 0 .5em 0;
+}
+
+body > article > fieldset legend {
+	margin: 2em 0 .5em 0;
+	font-size: 20px;
+	font-family: amarurgt;
+}
+
+body > article > fieldset svg {
+	width: 3em;
+}
+
+body > article > fieldset label svg {
+	filter: opacity(50%);
+	transition: filter .3s ease;
+	transition: transform .3s ease;
+	transform: scale(0.7);
+}
+
+body > article > fieldset label:focus svg,
+body > article > fieldset label:hover svg {
+	/* filter: opacity(100%); */
+	transform: scale(0.5);
+}
+
+body > article > fieldset input[type="radio"] {
+	position: relative;
+	bottom: 1em;
+	left: 2em;
+	opacity: 0;
+}
+
+body > article > fieldset input[type="radio"]:checked + label svg {
+	transform: scale(1);
+	filter: opacity(100%);
+}
+
 /* =========================
 			CHAT
 ========================= */
 
-main > ol:nth-of-type(1) li {
+ol:nth-of-type(1) li {
 	background-color: var(--main-colour);
 	padding: 1em;
 	margin: 1em 0;
@@ -367,19 +442,19 @@ main > ol:nth-of-type(1) li {
 	width: 70%;
 }
 
-main > ol:nth-of-type(1) li:nth-of-type(2) {
+ol:nth-of-type(1) li:nth-of-type(2) {
 	background-color: rgba(0, 0, 0, 0.3);
 	margin-left: 20%;
 	right: 0;
 }
 
-main > ol:nth-of-type(1) li footer p,
-main > ol:nth-of-type(1) li footer time {
+ol:nth-of-type(1) li footer p,
+ol:nth-of-type(1) li footer time {
 	font-weight: 300;
 	color: rgba(0, 0, 0, .8);
 }
 
-main > ol:nth-of-type(1) textarea {
+ol:nth-of-type(1) textarea {
 	border: solid var(--main-colour) 2px;
 	border-radius: 1em;
 	padding: .3em;
@@ -388,32 +463,32 @@ main > ol:nth-of-type(1) textarea {
 	transition: all .3s ease;
 }
 
-main > ol:nth-of-type(1) textarea:focus {
+ol:nth-of-type(1) textarea:focus {
 	border: solid black 2px;
 	box-shadow: var(--standard-shadow)
 }
 
-main > ol:nth-of-type(1) form label {
+ol:nth-of-type(1) form label {
 	display: none;
 }
 
-main > ol:nth-of-type(1) form textarea {
+ol:nth-of-type(1) form textarea {
 	display: inline-block;
 }
 
-main > ol:nth-of-type(1) form button {
+ol:nth-of-type(1) form button {
 	display: inline-block;
 	margin-bottom: 1em;
 	vertical-align: top;
 	margin-left: 1em;
 }
 
-main > ol:nth-of-type(1) p {
+ol:nth-of-type(1) p {
 	margin: 1em 0;
 	font-weight: 700;
 }
 
-main > ol:nth-of-type(1) {
+ol:nth-of-type(1) {
 	margin-top: .9em;
 }
 
@@ -493,7 +568,7 @@ main[rel="article"] p {
 	margin-top: 1em;
 }
 
-/* body  div:nth-of-type(2) {
+body  div:nth-of-type(2) {
 	display: block;
 	position: fixed;
 	top: 0;
@@ -503,19 +578,139 @@ main[rel="article"] p {
 	z-index: 2;
 }
 
-body  div:nth-of-type(2) div {
+body > div:nth-of-type(2) {
 	margin: 0 auto;
 	background-color: white;
-	width: 50%;
-	padding: 3em;
-	margin-top: 10em;
+	width: 75%;
+	padding: 1em;
+	margin-top: 5em;
 	box-shadow: var(--transparant-shadow);
+	height: 18em;
 }
 
-main {
+body  div:nth-of-type(2) div h2 {
+	margin-bottom: 1em;
+}
+
+body  div:nth-of-type(2) div p {
+	margin-bottom: 1em;
+}
+
+body  div:nth-of-type(2) div a {
+	border-bottom: solid white 1px;;
+	transition: all .3s ease;
+}
+
+body  div:nth-of-type(2) div a:focus {
+	color: var(--main-colour);
+	border-bottom: solid var(--main-colour) 1px;
+}
+
+body[rel="moonlanding"] main {
 	filter: blur(3px);
 	z-index: 0;
-} */
+	display: block;
+	margin-top: 2em;
+}
+
+#yes:target {
+	display: none;
+}
+
+body > article {
+	margin: 1em;
+}
+
+body > article p {
+	margin-top: 1em;
+}
+
+/* ==========================
+		PROFILE PAGE
+===========================*/
+
+body > span {
+	width: 75%;
+	margin: 5em auto;
+	margin-top: 3em;
+	display: block;
+	background-color: white;
+	padding: 2em;
+	background-color: #f7f7f7;
+}
+
+body > span > div > article h2 a {
+	font-size: 20px;
+	line-height: .7em;
+}
+
+body > span > div > article h1 {
+	font-size: 25px;
+}
+
+body > span > div > article h2 {
+	line-height: .7em;
+	margin-bottom: .3em;
+}
+
+body > span > div > article,
+body > span > div > div {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+body > span {
+	position: relative;
+}
+
+body > span:before,
+body > span:after {
+	z-index: -1;
+	position: absolute;
+	content: "";
+	bottom: 25px;
+	left: 10px;
+	width: 50%;
+	top: 80%;
+	max-width:300px;
+	background: #777;
+	-webkit-box-shadow: 0 35px 20px #777;
+	-moz-box-shadow: 0 35px 20px #777;
+	box-shadow: 0 35px 20px #777;
+	-webkit-transform: rotate(-8deg);
+	-moz-transform: rotate(-8deg);
+	-o-transform: rotate(-8deg);
+	-ms-transform: rotate(-8deg);
+	transform: rotate(-8deg);
+}
+
+body > span h2 {
+	display: block;
+	margin-bottom: 1em;
+}
+
+body > span:after {
+	-webkit-transform: rotate(8deg);
+  -moz-transform: rotate(8deg);
+  -o-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  right: 10px;
+  left: auto;
+}
+
+body > span b {
+	font-weight: 700;
+}
+
+body > span > div p {
+	margin: .3em 0;
+	line-height: 1.4em;
+}
+
+body > span > div p:nth-last-of-type(3n + 1) {
+	margin-bottom: 2em;
+}
 
 @media screen and (min-width: 48em) {
 	header {
@@ -569,8 +764,12 @@ main {
 		display: block;
 	}
 
+	#menu-closed:target {
+		display: none !important;
+	}
+
 	a[href="#menu"] {
-		display: none;
+		display: none !important;
 	}
 
 	section {
@@ -597,5 +796,53 @@ main {
 	header nav h2 {
 		text-align: right;
 		margin-right: 2em;
+	}
+
+	body div:nth-of-type(2) {
+		margin: 0 auto;
+		background-color: white;
+		width: 50%;
+		padding: 3em;
+		margin-top: 12em;
+		box-shadow: var(--transparant-shadow);
+		height: 13em;
+	}
+
+	body > article {
+		margin: 0 auto;
+		margin-top: 12em;
+		width: 60%;
+	}
+
+	header nav > ul > li:first-of-type {
+		display: none;
+	}
+
+	#menu:target {
+		height: auto;
+	}
+
+	body[rel="moonlanding"] main {
+		width: 60%;
+		margin-top: 12em;
+	}
+
+	a[href="/catagories"]:hover ul {
+		display: block;
+	}
+
+	body > span {
+		width: 60%;
+		margin-top: 9em;
+	}
+
+	body > span > div {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	body > span > div > article,
+	body > span > div > div {
+		width: 45%;
 	}
 }

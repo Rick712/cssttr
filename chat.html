@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat</title>
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html">Kippen exposed</a></h1>
+            <nav id="menu">
+                <h2>De waarheid over kippen</h2>
+                <ul>
+                    <li><a href="#">X</a></li>
+                    <li><a href="index.html" aria-label="Home, current page">Home</a></li>
+                    <li><a href="/catagories">Catagoriën</a>
+                        <ul>
+                            <li><a href="/catagories/exposed">Exposed</a></li>
+                            <li><a href="/catagories/stastieken">Statistieken</a></li>
+                            <li><a href="/catagories/recepten">Recepten</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="chat.html">Chat</a></li>
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#menu"><svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg></a>
+        </header>
+            
+        <div id="login">
+            <form action="#" method="post">
+                <a href="#login-away">X</a>
+                <label for="field-email">Email</label>
+                <input placeholder="E-mail" type="email" id="field-email" name="field-email" autocomplete="email" required autofocus>	
+                <label for="field-password">Password</label>
+                <input placeholder="Wachtwoord" type="password" id="field-password" name="field-password" required>					
+                <div>
+                    <input type="checkbox" id="field-stay-logged-in" name="field-stay-logged-in" value="stay-logged-in">
+                    <label for="field-stay-logged-in">Blijf ingelogd</label>
+                </div>
+                <button type="submit">Login</button>
+                <a href="#" rel="forgot">Wachtwoord vergeten?</a>					
+            </form>
+        </div>
+        <div>
+            <ol>
+                <li>
+                    <p>Hey!</p>
+                    <footer>
+                        <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
+                        <p data-status="READ">Has been read</p>
+                    </footer>
+                
+                </li>
+                <li>
+                    <p>Hey! Sorry I was busy</p>
+                    <footer>
+                        <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
+                    </footer>
+                </li>
+                <li>
+                    <p>I sent that 2 years ago</p>
+                    <footer>
+                        <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
+                        <p data-status="DELIVERED">Has been delivered</p>
+                    </footer>
+                </li>
+            </ol>
+                
+            <form action="/" method="post">
+                
+                <label for="field-message">Message</label>
+                <textarea name="field-message" id="field-message"></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    
+    </body>
+</html>
