@@ -33,6 +33,6 @@ There were also a few required a few techniques. These were:
 - Extending the clickable area
 - Custom checkboxes—6
 - (Pseudo)random background
-- Validatie of a form
+- Validation of a form
 
 All these techniques are based on the book CSS SECRETS: Better solutions to everyday web design problems by Lea Verou.
