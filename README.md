@@ -31,7 +31,7 @@ There were also a few required techniques. These were:
 - Transitions on :hovers and :focus
 - Custom cursor on element
 - Extending the clickable area
-- Custom checkboxes—6
+- Custom checkboxes
 - (Pseudo)random background
 - Validation of a form
 
