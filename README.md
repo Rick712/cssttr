@@ -20,7 +20,7 @@ Part of the task was to include some components to the website that weren't nece
 - And a step indicator
 
 ### Terms
-There were also a few required a few techniques. These were:
+There were also a few required techniques. These were:
 - A fancy ampersands
 - De-emphasize by dimming
 - De-emphasize by blurring
