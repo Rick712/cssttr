@@ -87,7 +87,12 @@ table {
 @font-face {
 	font-family: caviar dreams bold italic;
 	src: url('fonts/CaviarDreams_BoldItalic.ttf');	
-}	
+}
+
+@font-face {
+	font-family: Olivia;
+	src: url('fonts/Olivia-Regular.otf');
+}
 
 main {
 	margin: 1em;
@@ -121,6 +126,7 @@ h3 a {
 h1,
 h1 a {
 	font-size: 45px;
+	transition: color .3s ease;
 }
 
 h2 {
@@ -144,7 +150,7 @@ button {
 	font-weight: 700;
 	border: none;
 	box-shadow: 0 #aaa;
-	transition: all .3s ease;
+	transition: box-shadow .3s ease;
 }
 
 button:focus {
@@ -171,7 +177,7 @@ header nav ul li {
 }
 
 body > header > h1 {
-	transition: all .3s ease;
+	transition: color .3s ease;
 }
 
 body > header > h1 a:focus {
@@ -279,7 +285,7 @@ body > input {
 #login:target {
 	display: block;
 	position: fixed;
-	z-index: 5;;
+	z-index: 5;
 }
 
 input[type="email"],
@@ -292,9 +298,19 @@ input[type="password"] {
 	text-align: center;
 	margin: 0 auto;
 	width: 80%;
-	transition: all .3s ease;
+	transition: border .3s ease;
 	font-weight: 300;
 	font-family: caviar dreams, sans-serif;
+}
+
+input[type="email"]:valid,
+input[type="password"]:valid {
+	border: solid rgb(0, 255, 0) .1em;
+}
+
+input[type="email"]:focus:invalid,
+input[type="password"]:focus:invalid {
+	border: solid red .1em;
 }
 
 form div {
@@ -364,7 +380,7 @@ body > div:nth-of-type(1) > form > a[href="#login-away"] {
 
 body > div:nth-of-type(1) > form > a[href="#login-away"]:focus {
 	color: var(--main-colour);
-	transition: all .3s ease;
+	transition: color .3s ease;
 }
 
 form input[type="checkbox"] {
@@ -385,10 +401,6 @@ form a[rel="forgot"] {
 
 form a[rel="forgot"]:focus {
 	color: var(--main-colour);
-}
-
-a[for="login"] {
-	cursor: pointer;
 }
 
 body > article > fieldset {
@@ -434,7 +446,7 @@ body > article > fieldset input[type="radio"]:checked + label svg {
 			CHAT
 ========================= */
 
-ol:nth-of-type(1) li {
+div ol:nth-of-type(1) li {
 	background-color: var(--main-colour);
 	padding: 1em;
 	margin: 1em 0;
@@ -442,53 +454,53 @@ ol:nth-of-type(1) li {
 	width: 70%;
 }
 
-ol:nth-of-type(1) li:nth-of-type(2) {
+div ol:nth-of-type(1) li:nth-of-type(2) {
 	background-color: rgba(0, 0, 0, 0.3);
 	margin-left: 20%;
 	right: 0;
 }
 
-ol:nth-of-type(1) li footer p,
-ol:nth-of-type(1) li footer time {
+div ol:nth-of-type(1) li footer p,
+div ol:nth-of-type(1) li footer time {
 	font-weight: 300;
 	color: rgba(0, 0, 0, .8);
 }
 
-ol:nth-of-type(1) textarea {
+div ol:nth-of-type(1) textarea {
 	border: solid var(--main-colour) 2px;
 	border-radius: 1em;
 	padding: .3em;
 	resize: none;
 	width: calc(100% - 9em);
-	transition: all .3s ease;
+	transition: border .3s ease;
 }
 
-ol:nth-of-type(1) textarea:focus {
+div ol:nth-of-type(1) textarea:focus {
 	border: solid black 2px;
 	box-shadow: var(--standard-shadow)
 }
 
-ol:nth-of-type(1) form label {
+div ol:nth-of-type(1) form label {
 	display: none;
 }
 
-ol:nth-of-type(1) form textarea {
+div ol:nth-of-type(1) form textarea {
 	display: inline-block;
 }
 
-ol:nth-of-type(1) form button {
+div ol:nth-of-type(1) form button {
 	display: inline-block;
 	margin-bottom: 1em;
 	vertical-align: top;
 	margin-left: 1em;
 }
 
-ol:nth-of-type(1) p {
+div ol:nth-of-type(1) p {
 	margin: 1em 0;
 	font-weight: 700;
 }
 
-ol:nth-of-type(1) {
+div ol:nth-of-type(1) {
 	margin-top: .9em;
 }
 
@@ -517,7 +529,7 @@ article figure a:focus {
 
 article a {
 	color: black;
-	transition: all .3s ease;
+	transition: color .3s ease;
 	font-weight: 500;
 }
 
@@ -526,12 +538,14 @@ article a:focus {
 }
 
 article h2 a,
-article h3 a {
+article h3 a,
+article h2 a span {
 	color: black;
-	transition: all .3s ease;
+	transition: color .3s ease;
 }
 
-article h2 a:focus {
+article h2 a:focus,
+article h2 a:focus span {
 	color: var(--main-colour);
 }
 
@@ -540,7 +554,7 @@ article img {
 }
 
 main article:nth-of-type(2) {
-	margin-top: .6em;
+	margin-top: .95em;
 }
 
 article h3 {
@@ -556,6 +570,8 @@ article {
 	margin-bottom: 4em;
 }
 
+
+
 /* ==========================
 		 ARTICLE PAGE
 ===========================*/
@@ -568,7 +584,7 @@ main[rel="article"] p {
 	margin-top: 1em;
 }
 
-body  div:nth-of-type(2) {
+body aside {
 	display: block;
 	position: fixed;
 	top: 0;
@@ -578,7 +594,7 @@ body  div:nth-of-type(2) {
 	z-index: 2;
 }
 
-body > div:nth-of-type(2) {
+body > aside {
 	margin: 0 auto;
 	background-color: white;
 	width: 75%;
@@ -588,20 +604,20 @@ body > div:nth-of-type(2) {
 	height: 18em;
 }
 
-body  div:nth-of-type(2) div h2 {
+body  aside div h2 {
 	margin-bottom: 1em;
 }
 
-body  div:nth-of-type(2) div p {
+body  aside div p {
 	margin-bottom: 1em;
 }
 
-body  div:nth-of-type(2) div a {
+body  aside div a {
 	border-bottom: solid white 1px;;
 	transition: all .3s ease;
 }
 
-body  div:nth-of-type(2) div a:focus {
+body  aside div a:focus {
 	color: var(--main-colour);
 	border-bottom: solid var(--main-colour) 1px;
 }
@@ -631,7 +647,7 @@ body > article p {
 
 body > span {
 	width: 75%;
-	margin: 5em auto;
+	margin: 3em auto;
 	margin-top: 3em;
 	display: block;
 	background-color: white;
@@ -642,6 +658,10 @@ body > span {
 body > span > div > article h2 a {
 	font-size: 20px;
 	line-height: .7em;
+}
+
+body article h2 a span {
+	font-family: Olivia;
 }
 
 body > span > div > article h1 {
@@ -712,6 +732,107 @@ body > span > div p:nth-last-of-type(3n + 1) {
 	margin-bottom: 2em;
 }
 
+body > nav {
+	margin: 0 1em;
+}
+
+nav progress {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 100%;
+	height: 10px;
+	margin-bottom: 1em;
+	margin-top: .4em;
+}
+
+body nav ol {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+nav progress[value]::-webkit-progress-bar {
+	background-color: #eee;
+	border-radius: 1em;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+nav progress::-webkit-progress-value { 
+	background: var(--main-colour); 
+	border-radius: 1em;
+}
+
+/* =============================
+			CHAT PAGE
+==============================*/
+
+body > div:nth-of-type(2) {
+	margin: 0 1em;
+	margin-top: 4em;
+	max-width: 42.5em;
+}
+
+body > div:nth-of-type(2) form label {
+	display: none;
+}
+
+body > div:nth-of-type(2) form textarea {
+	border: solid var(--main-colour) .1em;
+	resize: none;
+	border-radius: 1em;
+	padding: 1em;
+	transition: border .3s ease;
+	width: 60%;
+}
+
+body > div:nth-of-type(2) form textarea:focus {
+	border: solid black .1em;
+}
+
+body > div:nth-of-type(2) form button {
+	display: inline;
+	padding-top: 1.6em;
+	padding-bottom: 1.6em;
+	width: 29%;
+	float: right;
+}
+
+body > div:nth-of-type(2) form div {
+	display: none;
+}
+
+#spinner:target {
+	display: block;
+	position: fixed;
+	right: 0;
+	left: 0;
+	width: 25%;
+	border-radius: 2em;
+	margin: 0 auto;
+	top: 20em;
+	background-color: rgba(255,255,255,.8);
+}
+
+@keyframes loader {
+	to { background-position: -800px 0; }
+}
+
+#spinner:target {
+	background: url(images/spinner.png) 0 0; 
+	animation: loader .8s infinite steps(8);
+	background-size: cover;
+	white-space: nowrap; 
+	overflow: hidden;
+	width: 100px; 
+	text-indent: 200%;
+	height: 100px;
+	-moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+-ms-transform: scale(-1, 1);
+transform: scale(-1, 1);
+	}
+
 @media screen and (min-width: 48em) {
 	header {
 		display: flex;
@@ -737,11 +858,30 @@ body > span > div p:nth-last-of-type(3n + 1) {
 		display: block;
 	}
 
+	body > nav {
+		margin: 0 auto;
+		width: calc(60% + 4em);
+	}
+
+	header nav > ul {
+		flex-direction: row;
+		margin: 0;
+		justify-content: space-around;
+		margin-top: 1em;
+		position: absolute;
+		right: 2em;
+		width: 60%;
+		min-width: 30em;
+	}
+
 	header nav ul {
 		flex-direction: row;
 		margin: 0;
 		justify-content: space-around;
 		margin-top: 1em;
+		position: absolute;
+		right: 2em;
+		width: 60%;
 	}
 
 	header nav ul li {
@@ -787,10 +927,45 @@ body > span > div p:nth-last-of-type(3n + 1) {
 		position: relative;
 	}
 
-	header nav ul {
-		position: absolute;
-		right: 2em;
-		width: 60%;
+	header nav ul li ul {
+		transition: all .3s ease;
+	}
+
+	@keyframes headerAnimation {
+		0% { height: 0; padding: 0; }
+		50% { height: 6em; padding: 2em; }
+		100% { height: 6em; padding: 2em; }
+	}
+
+	@keyframes listText {
+		0% { color: rgba(0,0,0,0); }
+		33% { color: rgba(0,0,0,0); }
+		100% { color: rgba(0,0,0,1); }
+	}
+
+	header nav ul li:focus-within ul,
+	header nav ul li ul:focus-within {
+		padding: 2em;
+		height: 6em;
+		width: auto;
+		top: 3.27em;
+		background-color: white;
+		margin: 0 auto;
+		display: block;
+		box-shadow: 0 18px 16px -8px rgba(0, 0, 0, 0.616);
+		right: 57%;
+		animation-name: headerAnimation;
+		animation-duration: .6s;
+	}
+
+	header nav ul li a:focus-within + ul li a {
+		animation-name: listText;
+		animation-duration: .6s;
+		color: black;
+		transition: all .3s ease;
+	}
+	header nav ul li ul li a:focus {
+		color: var(--main-colour);
 	}
 
 	header nav h2 {
@@ -798,7 +973,7 @@ body > span > div p:nth-last-of-type(3n + 1) {
 		margin-right: 2em;
 	}
 
-	body div:nth-of-type(2) {
+	body aside {
 		margin: 0 auto;
 		background-color: white;
 		width: 50%;
@@ -844,5 +1019,24 @@ body > span > div p:nth-last-of-type(3n + 1) {
 	body > span > div > article,
 	body > span > div > div {
 		width: 45%;
+	}
+
+	article fieldset {
+		transition: all .3s ease;
+	}
+	
+	article fieldset:focus-within {
+		transform: scale(1.1);
+		margin-left: 2.5em;
+	}
+	
+	body > div:nth-of-type(2) {
+		width: 60%;
+		margin: 0 auto;
+		margin-top: 10em;
+	}
+
+	body > div:nth-last-of-type(2) form textarea {
+		width: 68%;
 	}
 }
