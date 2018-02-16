@@ -2,7 +2,7 @@
 
 This is the course repository for 'CSS to the rescue'.
 
-The goal of this course is to make a highly accesable website for someone who has a disability. I was not alowed to use Javascript for the behaviour of the website. I neither was allowed to use classes and id's for styling. Only element selectors and pseudo selectors are alowed. The goal of the course is to learn how powerfull selectors are, and to learn how to make a website for someone with a disability, in this case someone with spasm. This person mainly uses tab and enter to navigate through the website. This means that I don't need to use hover states, but focus states as main interaction.
+The goal of this course is to make a responsive, and highly accesable website for someone who has a disability. I was not alowed to use Javascript for the behaviour of the website. I neither was allowed to use classes and id's for styling. Only element selectors and pseudo selectors are alowed. The goal of the course is to learn how powerfull selectors are, and to learn how to make a website for someone with a disability, in this case someone with spasm. This person mainly uses tab and enter to navigate through the website. This means that I don't need to use hover states, but focus states as main interaction.
 
 Live version of the website is on https://rick712.github.io/cssttr
 
@@ -36,3 +36,17 @@ There were also a few required techniques. These were:
 - Validation of a form
 
 All these techniques are based on the book CSS SECRETS: Better solutions to everyday web design problems by Lea Verou.
+
+### Main functions
+Of course, the back end of the website does not work, but you can still navigate through the website. The pages you can visit are:
+- index.html
+- profile.html
+- chat.html
+- /pages/maanlanding.html
+
+There are also a few hashes that have a particular function:
+- #login
+- #menu
+These are working on every page, and can be triggered by clicking on certain menu items.
+
+When you want to check the website out, be sure to to to these adresses.
