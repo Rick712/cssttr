@@ -589,6 +589,9 @@ form a[rel="forgot"]:focus {
 
 body > article > fieldset {
 	margin: 1em 0 .5em 0;
+	display: inline;
+	transition: 
+		box-shadow .3s ease .3s;
 }
 
 body > article > fieldset legend {
@@ -1106,6 +1109,10 @@ div ol:nth-of-type(1) form label,
 	article fieldset {
 		background-color: white;
 		padding: 2em;
+	}
+
+	body > article > fieldset:focus-within {
+		box-shadow: var(--transparant-shadow);
 	}
 
 	body > article > fieldset legend span {
