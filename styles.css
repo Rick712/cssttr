@@ -472,13 +472,17 @@ body > article > fieldset input[type="radio"] {
 }
 
 #login:target {
-	display: block;
 	position: fixed;
 	z-index: 5;
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	background: rgba(0,0,0,.8);
 }
 
-#yes:target {
-	display: none;
+#login:target form {
+	top: 0;
 }
 
 #spinner:target {
@@ -524,7 +528,11 @@ fieldset label svg {
 }
 
 body > div:nth-of-type(1) {
-	display: none;
+	z-index: -1;
+	position: fixed;
+	background: rgba(0,0,0,0);
+	transition:
+		background .5s ease;
 }
 
 form div {
@@ -542,17 +550,11 @@ label[for="field-password"] {
 	opacity: 0;
 }
 
-body > div:nth-of-type(1) {
-	position: absolute;
-	left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-	background: rgba(0,0,0,.8);
-}
-
 body > div:nth-of-type(1) > form {
 	background-color: white;
+	top: -50em;
+	transition: 
+		top .5s ease .5s;
 	position: relative;
 	width: 35vw;
 	min-width: 20em; 
@@ -561,7 +563,7 @@ body > div:nth-of-type(1) > form {
 	margin-top: 12em;
 }
 
-body > div:nth-of-type(1) > form > a[href="#login-away"] {
+body > div:nth-of-type(1) > form > a:nth-of-type(1) {
 	position: absolute;
 	right: 1em;
 	top: 1em;
@@ -569,7 +571,7 @@ body > div:nth-of-type(1) > form > a[href="#login-away"] {
 	font-weight: 700;
 }
 
-body > div:nth-of-type(1) > form > a[href="#login-away"]:focus {
+body > div:nth-of-type(1) > form > a:nth-of-type(1):focus {
 	color: var(--main-colour);
 	transition: color .3s ease;
 }
@@ -653,10 +655,6 @@ div ol:nth-of-type(1) textarea:focus {
 	box-shadow: var(--standard-shadow)
 }
 
-div ol:nth-of-type(1) form label {
-	display: none;
-}
-
 div ol:nth-of-type(1) form textarea {
 	display: inline-block;
 }
@@ -672,6 +670,7 @@ div ol:nth-of-type(1) {
 
 section {
 	margin: 1em;
+	display: grid;
 }
 
 /* =============================
@@ -730,17 +729,8 @@ article img {
 	width: 100%;
 }
 
-main article:nth-of-type(2) {
-	margin-top: .95em;
-}
-
 article h3 {
 	font-size: 1.25em;
-}
-
-section {
-	display: grid;
-
 }
 
 article {
@@ -805,6 +795,7 @@ body > span {
 	background-color: white;
 	padding: 2em;
 	background-color: #f7f7f7;
+	position: relative;
 }
 
 body article h2 a span {
@@ -824,10 +815,6 @@ body > span > div > article,
 body > span > div > div {
 	width: 100%;
 	margin-bottom: 0;
-}
-
-body > span {
-	position: relative;
 }
 
 body > span:before,
@@ -918,10 +905,6 @@ body > div:nth-of-type(2) {
 	max-width: 42.5em;
 }
 
-body > div:nth-of-type(2) form label {
-	display: none;
-}
-
 body > div:nth-of-type(2) form textarea {
 	border: solid var(--main-colour) .1em;
 	resize: none;
@@ -935,7 +918,14 @@ body > div:nth-of-type(2) form textarea:focus {
 	border: solid black .1em;
 }
 
-body > div:nth-of-type(2) form div {
+/* =============================
+			OTHER
+==============================*/
+
+body > div:nth-of-type(2) form div,
+body > div:nth-of-type(2) form label,
+div ol:nth-of-type(1) form label,
+#yes:target {
 	display: none;
 }
 
@@ -984,7 +974,10 @@ body > div:nth-of-type(2) form div {
 		padding: 0;
 	}
 
-	header nav ul ul {
+	header nav ul ul,
+	header nav > ul > li:first-of-type,
+	#menu-closed:target,
+	a[href="#menu"] {
 		display: none;
 	}
 
@@ -1016,10 +1009,6 @@ body > div:nth-of-type(2) form div {
 		margin-right: 2em;
 	}
 
-	header nav > ul > li:first-of-type {
-		display: none;
-	}
-
 	/* ==========================
 			BASIC MARKUP
 	========================== */
@@ -1031,6 +1020,10 @@ body > div:nth-of-type(2) form div {
 		grid-column-gap: 1em;
 		display: grid;
 		margin-top: 10em;
+	}
+
+	main article:nth-of-type(2) {
+		margin-top: 1.1em;
 	}
 
 	body > nav {
@@ -1069,16 +1062,8 @@ body > div:nth-of-type(2) form div {
 		display: block;
 	}
 
-	#menu-closed:target {
-		display: none !important;
-	}
-
 	#menu:target {
 		height: auto;
-	}
-
-	a[href="#menu"] {
-		display: none !important;
 	}
 
 	body > article > fieldset legend {
@@ -1101,10 +1086,6 @@ body > div:nth-of-type(2) form div {
 		33% { color: rgba(0,0,0,0); margin-top: .5em; }
 		50% { color: rgba(0,0,0,0); }
 		100% { color: rgba(0,0,0,1); margin-top: 0; }
-	}
-
-	a[href="/catagories"]:hover ul {
-		display: block;
 	}
 
 	body > span {
