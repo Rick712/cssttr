@@ -142,7 +142,8 @@ body > header > h1 {
 	transition: color .3s ease;
 }
 
-body > header > h1 a:focus {
+body > header > h1 a:focus,
+body > header > h1 a:hover {
 	color: white;
 }
 
@@ -165,7 +166,7 @@ header nav > ul > li:first-of-type {
 	position: absolute;
 	top: 0;
 	right: 0;
-	padding: 1.2em 1.8em 0 0;
+	padding: .8em 1.8em 0 0;
 	background-color: var(--main-colour);
 	z-index: 3;
 }
@@ -175,7 +176,8 @@ header nav > ul > li:first-of-type a {
 	font-size: 2em;
 }
 
-header nav > ul > li:first-of-type a:focus {
+header nav > ul > li:first-of-type a:focus,
+header nav > ul > li:first-of-type a:hover {
 	border-bottom: none;
 }
 
@@ -183,7 +185,8 @@ header a[href="#menu"] svg path {
 	transition: all .3s ease;
 }
 
-header a[href="#menu"]:focus svg path {
+header a[href="#menu"]:focus svg path,
+header a[href="#menu"]:hover svg path {
 	fill: white;
 }
 
@@ -206,12 +209,14 @@ header nav ul ul li a {
 	font-size: 1.125em;
 }
 
-header nav ul li a:focus {
+header nav ul li a:focus,
+header nav ul li a:hover {
 	color: white;
 	border-bottom: solid white .1em;
 }
 
-header nav ul ul li a:focus {
+header nav ul ul li a:focus,
+header nav ul ul li a:hover {
 	border-bottom: none;
 }
 
@@ -223,11 +228,13 @@ header a[href="#menu"] {
 	transition: all .3s ease;
 }
 
-header a[href="#menu"]:focus {
+header a[href="#menu"]:focus,
+header a[href="#menu"]:hover {
 	color: white;
 }
 
-header nav ul li a:focus-within + ul li a {
+header nav ul li a:focus-within + ul li a,
+header nav ul li a:hover + ul li a {
 	animation-name: listText;
 	animation-duration: 1s;
 	display: block;
@@ -235,8 +242,9 @@ header nav ul li a:focus-within + ul li a {
 	transition: all .3s ease;
 }
 
+header nav ul li ul li a:hover,
 header nav ul li ul li a:focus {
-	color: var(--main-colour);
+	color: rgba(255,255,255,1);
 }
 
 /* ===========================
@@ -259,6 +267,7 @@ body > div:nth-of-type(2) form button {
 	display: inline;
 	padding-top: 1.6em;
 	padding-bottom: 1.6em;
+	vertical-align: top;
 }
 
 form[action="#spinner"] button {
@@ -323,19 +332,23 @@ form[action="#"] button::after {
     right: 0;
 }
   
-form[action="#"] button:focus {
+form[action="#"] button:focus,
+form[action="#"] button:hover {
     color: var(--main-colour);
 }
 
 form[action="#"] button:focus::before,
-form[action="#"] button:focus::after {
+form[action="#"] button:focus::after,
+form[action="#"] button:hover::before,
+form[action="#"] button:hover::after {
     width: 100%;
 	height: 100%;
 	/* focus styles */
   }
 
 
-form[action="#"] button:focus::before {
+form[action="#"] button:focus::before,
+form[action="#"] button:hover::before {
     border-top-color: var(--main-colour); /* makes the borders visible */
     border-right-color: var(--main-colour);
     transition:
@@ -343,7 +356,8 @@ form[action="#"] button:focus::before {
       height 0.3s ease 0.3s; /* delay */
   }
 
-form[action="#"] button:focus::after {
+form[action="#"] button:focus::after,
+form[action="#"] button:hover::after {
     border-bottom-color: var(--main-colour); /* Make borders visible */
     border-left-color: var(--main-colour);
     transition:
@@ -352,7 +366,8 @@ form[action="#"] button:focus::after {
       height 0.3s ease 0.75s;
 }
 
-button:focus {
+button:focus,
+button:hover {
 	box-shadow: var(--standard-shadow);
 }
 
@@ -387,15 +402,18 @@ header nav ul li a {
 	border-bottom: none;
 }
 
-header nav ul li a:focus {
+header nav ul li a:focus,
+header nav ul li a:hover {
 	border-bottom: none;
 }
 
-article a:focus {
+article a:focus,
+article a:hover {
 	color: var(--main-colour);
 }
 
-body aside div a:focus {
+body aside div a:focus,
+body aside div a:hover {
 	color: var(--main-colour);
 	border-bottom: solid var(--main-colour) 0.063em;
 }
@@ -435,12 +453,16 @@ input[type="password"]:valid {
 }
 
 input[type="email"]:focus:invalid,
-input[type="password"]:focus:invalid {
+input[type="password"]:focus:invalid,
+input[type="email"]:hover:invalid,
+input[type="password"]:hoverfocus:invalid {
 	border: solid red .2em;
 }
 
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:hover,
+input[type="password"]:hover {
 	border: solid black .2em;
 	box-shadow: var(--standard-shadow)
 }
@@ -450,7 +472,8 @@ form input[type="checkbox"] {
 	margin-right: .5em;
 }
 
-form input[type="checkbox"]:focus {
+form input[type="checkbox"]:focus,
+form input[type="checkbox"]:hover {
 	box-shadow: var(--standard-shadow);
 }
 
@@ -571,7 +594,8 @@ body > div:nth-of-type(1) > form > a:nth-of-type(1) {
 	font-weight: 700;
 }
 
-body > div:nth-of-type(1) > form > a:nth-of-type(1):focus {
+body > div:nth-of-type(1) > form > a:nth-of-type(1):focus,
+body > div:nth-of-type(1) > form > a:nth-of-type(1):hover {
 	color: var(--main-colour);
 	transition: color .3s ease;
 }
@@ -583,7 +607,8 @@ form a[rel="forgot"] {
 	transition: all .3s ease;
 }
 
-form a[rel="forgot"]:focus {
+form a[rel="forgot"]:focus,
+form a[rel="forgot"]:hover {
 	color: var(--main-colour);
 }
 
@@ -653,7 +678,8 @@ div ol:nth-of-type(1) textarea {
 	transition: border .3s ease;
 }
 
-div ol:nth-of-type(1) textarea:focus {
+div ol:nth-of-type(1) textarea:focus,
+div ol:nth-of-type(1) textarea:hover {
 	border: solid black 0.125em;
 	box-shadow: var(--standard-shadow)
 }
@@ -719,12 +745,15 @@ article h2 a span {
 }
 
 article h3 a:focus::after,
-article h2 a:focus::after {
+article h2 a:focus::after,
+article h3 a:hover::after,
+article h2 a:hover::after {
 	width: 100%;
 	background-color: var(--main-colour);
 }
 
-article h2 a:focus span {
+article h2 a:focus span,
+article h2 a:hover span {
 	color: var(--main-colour);
 }
 
@@ -917,7 +946,8 @@ body > div:nth-of-type(2) form textarea {
 	width: 60%;
 }
 
-body > div:nth-of-type(2) form textarea:focus {
+body > div:nth-of-type(2) form textarea:focus,
+body > div:nth-of-type(2) form textarea:hover {
 	border: solid black .1em;
 }
 
@@ -966,10 +996,11 @@ div ol:nth-of-type(1) form label,
 	header nav ul {
 		flex-direction: row;
 		margin: 0;
-		justify-content: space-around;
+		justify-content: space-between;
 		margin-top: .3em;
 		position: absolute;
-		right: 2em;
+		right: 0;
+		margin-right: 3.7em;
 		width: 60%;
 	}
 
@@ -993,7 +1024,9 @@ div ol:nth-of-type(1) form label,
 	}
 
 	header nav ul li:focus-within ul,
-	header nav ul li ul:focus-within {
+	header nav ul li ul:focus-within,
+	header nav ul li:hover ul,
+	header nav ul li ul:hover {
 		padding: 2em;
 		height: 6em;
 		width: auto;
@@ -1022,7 +1055,11 @@ div ol:nth-of-type(1) form label,
 		grid-template-columns: 65% calc(35% - 1em);
 		grid-column-gap: 1em;
 		display: grid;
-		margin-top: 10em;
+	}
+
+	main > article:nth-of-type(1),
+	main > article:nth-of-type(2) {
+		padding-top: 10em;
 	}
 
 	main article:nth-of-type(2) {
@@ -1111,7 +1148,8 @@ div ol:nth-of-type(1) form label,
 		padding: 2em;
 	}
 
-	body > article > fieldset:focus-within {
+	body > article > fieldset:focus-within,
+	body > article > fieldset:hover {
 		box-shadow: var(--transparant-shadow);
 	}
 
@@ -1128,5 +1166,10 @@ div ol:nth-of-type(1) form label,
 
 	body > div:nth-last-of-type(2) form textarea {
 		width: 68%;
+	}
+
+	header nav ul li ul li a:hover, 
+	header nav ul li ul li a:focus {
+		color: var(--main-colour);
 	}
 }
