@@ -69,3 +69,9 @@ I also learned a few new selectors, like ``+``, and even the ``>`` was relativel
 
 ### Week three
 In the last week I got quite some feedback about the website, mostly for the code. So in week 3 i cleaned up the code. The code was quite chaotic, and there was no logical order in it. When I fixed this I finished the interactions and the components. 
+
+What I learned is the power of selectors. When teachers use to say that selectors are powerfull, I used to think: 'Yeah, right. CLASSES FTW', but they really are. While they are really powerfull, they also are dangerous when you don't really know the structure of your HTML elements. I think I will use selectors a lot more than I used to, but in combination with classes to have the best of both worlds.
+
+I also learned how to use the ``#id:target`` like I said before, so I won't describe this one detailed.
+
+And of course, the main focus of the course, using a keyboard to navigate through the website. When I used to make a website, I didn't really think abouth navigating through a website with tab, but this course was an eye opener for me. Even if you are not handicapped, like Marijn, it can be easier and quicker than using a mouse. When making future projects, I'll be sure to at least check if the website is usable with a keyboard.
