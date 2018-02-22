@@ -77,3 +77,8 @@ I also learned how to use the ``#id:target`` like I said before, so I won't desc
 And of course, the main focus of the course, using a keyboard to navigate through the website. When I used to make a website, I didn't really think abouth navigating through a website with tab, but this course was an eye opener for me. Even if you are not handicapped, like Marijn, it can be easier and quicker than using a mouse. When making future projects, I'll be sure to at least check if the website is usable with a keyboard.
 
 The last big thing I learned is thinking about interaction. When you make a website, you can add that extra feeling by making nice micro interactions in elements. This is not just adding a hover state to a button, but a lot more than that. A login form that is falling down the screen, a sub-menu that opens when focussing it's parent and box shadows can really increase the interaction between your website and the user. I got the feeling that I realised this a bit too late, but I do think I got some sweet animations on the website.
+
+## Wishlist
+- A chat that is in all pages, and doesn't have it's own page
+- More interactions
+- (Maybe) change look and feel, I am not really satisfied with the use of colours and fonts
