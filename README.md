@@ -50,3 +50,14 @@ There are also a few hashes that have a particular function:
 These are working on every page, and can be triggered by clicking on certain menu items.
 
 When you want to check the website out, be sure to to to these adresses.
+
+## Progress
+
+### Week one
+In week one I set up the basic style of the website. I put all the components in a grid, and decided what kind of website I wanted to make. Since Vasilis said he wanted to be amused while reviewing the site, I decided to make a 'chicken awereness' website. The site wants the visitors to know that chickens are highly intelligent creatures that are taking over the world. I chose a few fonts I liked, and decided what kind of colours I wanted to use. I also added the first few components.
+
+### Week two
+In week two I began making the first interactions. I really enjoy box shadows, so I put in a few of them. I really like when you get the feeling that a website is a 3 dimensional space, and box shadows enable you to give that feeling to the user. I also added the last components to the website. When the components were working I started to add the requirements from the book CSS SECRETS. I enjoyed most of them, but there were some things I didn't like very much. 
+
+### Week three
+In the last week I got quite some feedback about the website, mostly for the code. So in week 3 i cleaned up the code. The code was quite chaotic, and there was no logical order in it. When I fixed this I finished the interactions and the components. 
