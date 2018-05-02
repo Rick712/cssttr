@@ -2,9 +2,10 @@
 			VARIABLES 
 =================================*/
 :root {
-	--main-colour: rgb(38, 232, 242);
+	--main-colour: rgb(242, 38, 38);
 	--standard-shadow: 0.31em 0.31em 0.31em #aaa;
 	--transparant-shadow: 0.63em 0.63em 0.63em rgba(92, 92, 92, 1);
+	--font-color: rgb(41, 41, 41);
 }
 
 
@@ -65,18 +66,18 @@ table {
 ================================ */
 
 @font-face {
-	font-family: amarurgt;
-	src: url('fonts/amarurgt.ttf');
+	font-family: 'Open Sans';
+	src: url('fonts/OpenSans-Regular.ttf')
 }
 
 @font-face {
-	font-family: caviardreams;
-	src: url('fonts/CaviarDreams.ttf');
+	font-family: 'Open Sans Light';
+	src: url('fonts/OpenSans-Light.ttf')
 }
 
 @font-face {
-	font-family: Olivia;
-	src: url('fonts/Olivia-Regular.otf')
+	font-family: 'Quantum';
+	src: url('fonts/Quantum.otf')
 }
 
 /* ================================
@@ -85,29 +86,44 @@ table {
 
 body {
 	background-color: #fff;
-	font-family: sans-serif;
+	font-family: 'Open Sans';
+}
+
+article h2 {
+	font-family: 'Quantum';
+	text-align: center;
+	font-size: 80px;
+	margin-top: 8rem;
 }
 
 main {
 	margin: 1em;
-	margin-bottom: 3em;
+	margin-bottom: 5em;
+}
+
+figcaption p {
+	line-height: 1.8rem;
+	font-family: 'Open Sans Light';
+	margin-bottom: 1rem;
+}
+
+figcaption footer *,
+figcaption footer {
+	font-family: 'Open Sans Light';
+	margin-top: 1rem;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 h1 a,
-h2 a,
-h3 a {
-	font-family: amarurgt, sans-serif;
+h2 a {
+	font-family: 'Quantum' , sans-serif;
 }
 
 h1,
 h1 a {
 	font-size: 1.6em;
+	font-family: 'Quantum';
 	transition: color .3s ease;
 }
 
@@ -136,6 +152,15 @@ header nav ul {
 
 header nav ul li {
 	padding: 2em 0;
+	font-family: 'Open Sans Light';
+}
+
+header > nav > ul > li:nth-of-type(2) > a{
+	color: white;
+}
+
+header nav ul li:nth-of-type(2) a:focus {
+	color: red;
 }
 
 body > header > h1 {
@@ -144,20 +169,19 @@ body > header > h1 {
 
 body > header > h1 a:focus,
 body > header > h1 a:hover {
-	color: white;
+	color: var(--main-colour);
 }
 
 header > nav ul li a {
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 1.250em;
-	border-bottom: solid black .1em;
-	color: black;
-	transition: all .3s ease;
+	color: var(--font-color);
+	transition: color .3s ease;
 }
 
 header {
-	background-color: var(--main-colour);
+	background-color: white;
 	padding: .5em 1em;
 	z-index: 1;
 }
@@ -167,7 +191,7 @@ header nav > ul > li:first-of-type {
 	top: 0;
 	right: 0;
 	padding: .8em 1.8em 0 0;
-	background-color: var(--main-colour);
+	background-color: white;
 	z-index: 3;
 }
 
@@ -187,7 +211,7 @@ header a[href="#menu"] svg path {
 
 header a[href="#menu"]:focus svg path,
 header a[href="#menu"]:hover svg path {
-	fill: white;
+	fill: var(--main-colour);
 }
 
 header nav h2 {
@@ -211,9 +235,12 @@ header nav ul ul li a {
 
 header nav ul li a:focus,
 header nav ul li a:hover {
+	color: var(--main-colour);
+}
+
+header nav > ul li:nth-of-type(2) > a:hover {
 	color: white;
-	border-bottom: solid white .1em;
-	/* border-bottom: none; */
+	cursor: default;
 }
 
 header a[href="#menu"] {
@@ -221,12 +248,11 @@ header a[href="#menu"] {
 	top: .5em;
 	right: .5em;
 	font-size: 2em;
-	transition: all .3s ease;
 }
 
 header a[href="#menu"]:focus,
 header a[href="#menu"]:hover {
-	color: white;
+	color: var(--main-colour);
 }
 
 header nav ul li a:focus-within + ul li a,
@@ -234,23 +260,18 @@ header nav ul li a:hover + ul li a {
 	animation-name: listText;
 	animation-duration: 1s;
 	display: block;
-	color: black;
+	color: var(--font-color);
 	transition: all .3s ease;
 }
 
 header nav ul li ul li a:hover,
 header nav ul li ul li a:focus {
-	color: rgba(255,255,255,1);
+	color: var(--main-colour);
 }
 
 /* ===========================
 			BUTTONS
 =========================== */
-
-form button {
-	display: block;
-	margin: 0 auto;
-}
 
 div ol:nth-of-type(1) form button {
 	display: inline-block;
@@ -264,6 +285,16 @@ body > div:nth-of-type(2) form button {
 	padding-top: 1.65em;
 	padding-bottom: 1.7em;
 	vertical-align: top;
+}
+
+form[action="#spinner"] {
+	display: flex;
+	justify-content: space-between;
+}
+
+form[action="#spinner"] textarea {
+	flex-grow: 1;
+	margin-right: .5rem;
 }
 
 form[action="#spinner"] button {
@@ -349,7 +380,7 @@ form[action="#"] button:hover::before {
     border-right-color: var(--main-colour);
     transition:
       width 0.3s ease,
-      height 0.3s ease 0.3s; /* delay */
+      height 0.3s ease 0.3s;
   }
 
 form[action="#"] button:focus::after,
@@ -374,12 +405,15 @@ button:hover {
 article figure a {
 	display: block;
 	margin-bottom: 1em;
-	font-weight: 700;
-	transition: all .3s ease;
+	transition: color .3s ease;
+}
+
+h1 a {
+	color: var(--font-color);
 }
 
 article a {
-	color: black;
+	color: var(--font-color);
 	transition: color .3s ease;
 	font-weight: 500;
 }
@@ -392,10 +426,6 @@ body aside div a {
 body > span > div > article h2 a {
 	font-size: 1.25em;
 	line-height: .7em;
-}
-
-header nav ul li a {
-	border-bottom: none;
 }
 
 header nav ul li a:focus,
@@ -502,35 +532,53 @@ body > article > fieldset input[type="radio"] {
 
 #login:target form {
 	top: 0;
+	visibility: visible;
 }
 
 #spinner:target {
 	display: block;
 	position: fixed;
+	top: 18rem;
 	right: 0;
 	left: 0;
-	width: 25%;
-	border-radius: 2em;
 	margin: 0 auto;
-	top: 20em;
-	background-color: rgba(255,255,255,.8);
-	background: url(images/spinner.png) 0 0; 
-	animation: loader .8s infinite steps(8);
-	background-size: cover;
-	white-space: nowrap; 
-	overflow: hidden;
-	width: 6.250em; 
-	text-indent: 200%;
-	height: 6.250em;
-	-moz-transform: scale(-1, 1);
-	-webkit-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
-	transform: scale(-1, 1);
+	background-color: rgba(255,255,255,0);
 }
 
-@keyframes loader {
-	to { background-position: -50em 0; }
+#spinner:target > div {
+	background-color: #ffffff00;
+	display: block;
+	width: 75px;
+	height: 75px;
+	margin: 0 auto;
+	animation: rotate 1s infinite ease-in-out;
+}
+
+#spinner > div > div {
+	width: 15px;
+	height: 15px;
+	background-color: red;
+	border-radius: 10px;
+	margin: 0 auto;
+	display: block;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes rotateBottom {
+	0% {
+		transform: rotate(180deg)
+	}
+	100% {
+		transform: rotate(540deg)
+	}
 }
 
 /* ===========================
@@ -580,6 +628,7 @@ body > div:nth-of-type(1) > form {
 	margin: 0 auto;
 	padding: 3em;
 	margin-top: 12em;
+	visibility: hidden;
 }
 
 body > div:nth-of-type(1) > form > a:nth-of-type(1) {
@@ -646,7 +695,7 @@ body > article > fieldset input[type="radio"]:checked + label svg {
 ========================= */
 
 div ol:nth-of-type(1) li {
-	background-color: var(--main-colour);
+	background-color: rgb(238, 238, 238);
 	padding: 1em;
 	margin: 1em 0;
 	border-radius: 1em;
@@ -702,14 +751,10 @@ section {
 			ARTICLES
 ============================= */
 
-article p {
-	line-height: 1.4em;
-}
-
 article h2 a,
 article h3 a,
 article h2 a span {
-	color: black;
+	color: var(--font-color);
 	border-bottom: .1em solid transparent;
 	transition: 
 	color .3s ease .3s,
@@ -740,6 +785,10 @@ article h2 a span {
 	display: inline;
 }
 
+section article img {
+	width: 100%;
+}
+
 article h3 a:focus::after,
 article h2 a:focus::after,
 article h3 a:hover::after,
@@ -754,11 +803,16 @@ article h2 a:hover span {
 }
 
 article img {
-	width: 100%;
+	width: 75%;
+	margin: 0 auto;
+	display: block;
 }
 
 article h3 {
 	font-size: 1.25em;
+	letter-spacing: 5px;
+	text-align: center;
+	line-height: 1.9rem;
 }
 
 article {
@@ -824,10 +878,6 @@ body > span {
 	padding: 2em;
 	background-color: #f7f7f7;
 	position: relative;
-}
-
-body article h2 a span {
-	font-family: Olivia;
 }
 
 body > span > div > article h1 {
@@ -957,6 +1007,16 @@ div ol:nth-of-type(1) form label,
 	display: none;
 }
 
+section article h3 {
+	letter-spacing: 0;
+}
+
+section article {
+	padding: 1rem;
+	background-color: rgb(247, 247, 247);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
 
 @media screen and (min-width: 62.750rem) {
 	body main article:nth-of-type(2) {
@@ -972,8 +1032,7 @@ div ol:nth-of-type(1) form label,
 	}
 
 	main {
-		grid-template-columns: 60% calc(40% - 1em);
-		grid-column-gap: 1em;
+		grid-template-columns: 100%;
 		margin-top: 8rem;
 	}
 
@@ -989,9 +1048,6 @@ div ol:nth-of-type(1) form label,
 		position: fixed;
 		top: 0;
 		width: 100vw;
-		-webkit-box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
-		moz-box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
-		box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
 	}
 
 	header nav {
@@ -1014,7 +1070,7 @@ div ol:nth-of-type(1) form label,
 		flex-direction: row;
 		margin: 0;
 		justify-content: space-between;
-		margin-top: .3em;
+		margin-top: 1.3em;
 		position: absolute;
 		right: 0;
 		margin-right: 3.7em;
@@ -1047,12 +1103,12 @@ div ol:nth-of-type(1) form label,
 		padding: 2em;
 		height: 6em;
 		width: auto;
-		top: 3.27em;
-		background-color: white;
+		top: 2em;
+		background-color: rgb(255, 255, 255);
 		margin: 0 auto;
 		display: block;
-		box-shadow: 0 1.125em 1em -0.500em rgba(0, 0, 0, 0.616);
-		right: 62%;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
+		right: 34.5%;
 		animation-name: headerAnimation;
 		animation-duration: .8s;
 	}
@@ -1068,8 +1124,8 @@ div ol:nth-of-type(1) form label,
 	}
 
 	section {
-		grid-template-columns: calc(25% - .75em) calc(25% - .75em) calc(25% - .75em) calc(25% - .75em);
-		grid-column-gap: 1em;
+		grid-template-columns: calc(33.333% - 1.25em) calc(33.3333% - 1.25em) calc(33.3333% - 1.25em);
+		grid-column-gap: 2em;
 		max-width: 75vw;
 		margin: 0 auto;
 	}
@@ -1166,7 +1222,7 @@ div ol:nth-of-type(1) form label,
 
 	header nav ul li ul li a:hover, 
 	header nav ul li ul li a:focus {
-		color: var(--main-colour);
+		color: rgb(255, 0, 0);
 	}
 
 }
@@ -1178,11 +1234,11 @@ div ol:nth-of-type(1) form label,
 	========================== */
 
 	main {
-		width: 75vw;
+		width: 50vw;
 		margin: 0 auto;
-		grid-template-columns: 65% calc(35% - 1em);
-		grid-column-gap: 1em;
+		grid-template-columns: 100%;
 		display: grid;
-		margin-top: 8em;
+		margin-top: 4rem;
+		margin-bottom: 7rem;
 	}
 }
