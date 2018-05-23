@@ -460,7 +460,15 @@ button:hover {
 article figure a {
 	display: block;
 	margin-bottom: 1em;
-	transition: color .3s ease;
+	font-weight: 900;
+	transition: 
+		color .3s ease,
+		text-decoration .3s ease;
+}
+
+article figure a:focus,
+article figure a:hover {
+	text-decoration: underline;
 }
 
 h1 a {
@@ -476,6 +484,8 @@ article a {
 body aside div a {
 	border-bottom: solid white 0.063em;;
 	transition: all .3s ease;
+	border-bottom: solid black 2px;
+	font-weight: 900;
 }
 
 body > span > div > article h2 a {
@@ -496,7 +506,8 @@ article a:hover {
 body aside div a:focus,
 body aside div a:hover {
 	color: var(--main-colour);
-	border-bottom: solid var(--main-colour) 0.063em;
+	border-bottom: solid var(--main-colour) 2px;
+	font-weight: 900;
 }
 
 
@@ -1083,12 +1094,34 @@ section article h3 a:focus {
 	color: black;;
 }
 
-section article {
+section article a {
+	background-color: rgb(233, 233, 233);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 	padding: 1rem;
-	background-color: #EB1a28;
-	box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+	display: block;
+	border-radius: 10px;
+	transition: 
+		transform .3s ease-in-out,
+		background-color .3s ease-in-out;
 }
 
+section article a h3,
+section article a p {
+	color: black !important;
+	transition: color .3s ease-in-out;
+}
+
+section article a:hover,
+section article a:focus {
+	transform: scale(1.08);
+	background-color: #EB1a28;
+}
+section article a:hover h3,
+section article a:hover p,
+section article a:focus h3,
+section article a:focus p {
+	color: white !important;
+}
 
 @media screen and (min-width: 62.750rem) {
 	body main article:nth-of-type(2) {
