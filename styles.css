@@ -2,9 +2,11 @@
 			VARIABLES 
 =================================*/
 :root {
-	--main-colour: rgb(38, 232, 242);
+	--main-colour: #EB1a28;
 	--standard-shadow: 0.31em 0.31em 0.31em #aaa;
-	--transparant-shadow: 0.63em 0.63em 0.63em rgba(92, 92, 92, 1);
+	--transparant-shadow: 0.63em 0.63em 0.63em rgba(92, 92, 92, 0.5);
+	--font-color: rgb(41, 41, 41);
+	--green-correct: rgb(0, 233, 70);
 }
 
 
@@ -28,13 +30,13 @@ time, mark, audio, video, input, button,
 textarea {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
+	color: black;
 	font: inherit;
 	vertical-align: baseline;
-	color: black;
-	outline: 0;
 	text-decoration: none;
+	border: 0;
+	outline: 0;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -65,18 +67,18 @@ table {
 ================================ */
 
 @font-face {
-	font-family: amarurgt;
-	src: url('fonts/amarurgt.ttf');
+	font-family: 'Open Sans';
+	src: url('fonts/OpenSans-Regular.ttf')
 }
 
 @font-face {
-	font-family: caviardreams;
-	src: url('fonts/CaviarDreams.ttf');
+	font-family: 'Open Sans Light';
+	src: url('fonts/OpenSans-Light.ttf')
 }
 
 @font-face {
-	font-family: Olivia;
-	src: url('fonts/Olivia-Regular.otf')
+	font-family: 'Quantum';
+	src: url('fonts/Quantum.otf')
 }
 
 /* ================================
@@ -85,29 +87,44 @@ table {
 
 body {
 	background-color: #fff;
-	font-family: sans-serif;
+	font-family: 'Open Sans';
+}
+
+article h2 {
+	font-family: 'Quantum';
+	text-align: center;
+	font-size: 80px;
+	margin-top: 8rem;
 }
 
 main {
 	margin: 1em;
-	margin-bottom: 3em;
+	margin-bottom: 5em;
+}
+
+figcaption p {
+	line-height: 1.8rem;
+	font-family: 'Open Sans Light';
+	margin-bottom: 1rem;
+}
+
+figcaption footer *,
+figcaption footer {
+	font-family: 'Open Sans Light';
+	margin-top: 1rem;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6,
 h1 a,
-h2 a,
-h3 a {
-	font-family: amarurgt, sans-serif;
+h2 a {
+	font-family: 'Quantum' , sans-serif;
 }
 
 h1,
 h1 a {
 	font-size: 1.6em;
+	font-family: 'Quantum';
 	transition: color .3s ease;
 }
 
@@ -136,6 +153,15 @@ header nav ul {
 
 header nav ul li {
 	padding: 2em 0;
+	font-family: 'Open Sans Light';
+}
+
+header > nav > ul > li:nth-of-type(2) > a{
+	color: white;
+}
+
+header nav ul li:nth-of-type(2) a:focus {
+	color: red;
 }
 
 body > header > h1 {
@@ -144,20 +170,19 @@ body > header > h1 {
 
 body > header > h1 a:focus,
 body > header > h1 a:hover {
-	color: white;
+	color: var(--main-colour);
 }
 
 header > nav ul li a {
 	text-decoration: none;
 	font-weight: 700;
 	font-size: 1.250em;
-	border-bottom: solid black .1em;
-	color: black;
-	transition: all .3s ease;
+	color: var(--font-color);
+	transition: color .3s ease;
 }
 
 header {
-	background-color: var(--main-colour);
+	background-color: white;
 	padding: .5em 1em;
 	z-index: 1;
 }
@@ -167,7 +192,7 @@ header nav > ul > li:first-of-type {
 	top: 0;
 	right: 0;
 	padding: .8em 1.8em 0 0;
-	background-color: var(--main-colour);
+	background-color: white;
 	z-index: 3;
 }
 
@@ -187,7 +212,7 @@ header a[href="#menu"] svg path {
 
 header a[href="#menu"]:focus svg path,
 header a[href="#menu"]:hover svg path {
-	fill: white;
+	fill: var(--main-colour);
 }
 
 header nav h2 {
@@ -211,9 +236,12 @@ header nav ul ul li a {
 
 header nav ul li a:focus,
 header nav ul li a:hover {
+	color: var(--main-colour);
+}
+
+header nav > ul li:nth-of-type(2) > a:hover {
 	color: white;
-	border-bottom: solid white .1em;
-	/* border-bottom: none; */
+	cursor: default;
 }
 
 header a[href="#menu"] {
@@ -221,12 +249,11 @@ header a[href="#menu"] {
 	top: .5em;
 	right: .5em;
 	font-size: 2em;
-	transition: all .3s ease;
 }
 
 header a[href="#menu"]:focus,
 header a[href="#menu"]:hover {
-	color: white;
+	color: var(--main-colour);
 }
 
 header nav ul li a:focus-within + ul li a,
@@ -234,23 +261,18 @@ header nav ul li a:hover + ul li a {
 	animation-name: listText;
 	animation-duration: 1s;
 	display: block;
-	color: black;
+	color: var(--font-color);
 	transition: all .3s ease;
 }
 
 header nav ul li ul li a:hover,
 header nav ul li ul li a:focus {
-	color: rgba(255,255,255,1);
+	color: var(--main-colour);
 }
 
 /* ===========================
 			BUTTONS
 =========================== */
-
-form button {
-	display: block;
-	margin: 0 auto;
-}
 
 div ol:nth-of-type(1) form button {
 	display: inline-block;
@@ -266,22 +288,23 @@ body > div:nth-of-type(2) form button {
 	vertical-align: top;
 }
 
-form[action="#spinner"] button {
-	background-color: var(--main-colour);
-	color: black;
-	font-size: 1em;
-	padding: 1em 2em;
-	font-weight: 700;
-	border: none;
-	box-shadow: 0 #aaa;
-	transition: box-shadow .3s ease;
+form[action="#spinner"] {
+	display: flex;
+	justify-content: space-between;
 }
 
+form[action="#spinner"] textarea {
+	flex-grow: 1;
+	margin-right: .5rem;
+}
+
+form[action="#spinner"] button,
 form[action="#"] button {
 	margin: 0 auto;
 	display: block;
 }
 
+form[action="#spinner"] button,
 form[action="#"] button {
 	background: none;
   	border: 0;
@@ -297,6 +320,8 @@ form[action="#"] button {
 	vertical-align: middle;
 }
 
+form[action="#spinner"] button::before,
+form[action="#spinner"] button::after,
 form[action="#"] button::before,
 form[action="#"] button::after {
     box-sizing: inherit;
@@ -306,10 +331,18 @@ form[action="#"] button::after {
     height: 100%;
   }
 
-form[action="#"] button {
+form[action="#spinner"] button {
     transition: color 0.4s ease;
 }
 
+form[action="#"] button {
+	color: black;
+	transition: color 0.6s ease;
+	transition-delay: 2s;
+}
+
+form[action="#spinner"] button::before,
+form[action="#spinner"] button::after,
 form[action="#"] button::before,
 form[action="#"] button::after {
 	/* invisible border so it doesn't shift around elements */
@@ -318,21 +351,22 @@ form[action="#"] button::after {
     height: 0;
 }
 
+form[action="#spinner"] button::before,
 form[action="#"] button::before {
     top: 0;
     left: 0;
 }
 
+form[action="#spinner"] button::after,
 form[action="#"] button::after {
     bottom: 0;
     right: 0;
 }
-  
-form[action="#"] button:focus,
-form[action="#"] button:hover {
-    color: var(--main-colour);
-}
 
+form[action="#spinner"] button:focus::before,
+form[action="#spinner"] button:focus::after,
+form[action="#spinner"] button:hover::before,
+form[action="#spinner"] button:hover::after,
 form[action="#"] button:focus::before,
 form[action="#"] button:focus::after,
 form[action="#"] button:hover::before,
@@ -340,26 +374,78 @@ form[action="#"] button:hover::after {
     width: 100%;
 	height: 100%;
 	/* focus styles */
-  }
+}
 
+@keyframes red-to-green-right-top {
+	0% {
+		border-right-color: var(--main-colour);
+		border-top-color: var(--main-colour);
+	}
+	100% {
+		border-right-color: var(--green-correct);
+		border-top-color: var(--green-correct);
+	}
+}
+
+@keyframes red-to-green-bottom-left {
+	0% {
+		border-left-color: var(--main-colour);
+		border-bottom-color: var(--main-colour);
+	}
+	100% {
+		border-left-color: var(--green-correct);
+		border-bottom-color: var(--green-correct);
+	}
+}
 
 form[action="#"] button:focus::before,
-form[action="#"] button:hover::before {
-    border-top-color: var(--main-colour); /* makes the borders visible */
+form[action="#"] button:hover::before,
+form[action="#spinner"] button:hover::before,
+form[action="#spinner"] button:focus::before {
+    border-top-color: var(--main-colour);
     border-right-color: var(--main-colour);
     transition:
-      width 0.3s ease,
-      height 0.3s ease 0.3s; /* delay */
-  }
+    	width 0.3s ease,
+		height 0.3s ease 0.3s;
+}
+
+  form[action="#"] button:hover::before,
+  form[action="#"] button:focus::before {
+  	border-top-color: var(--main-colour);
+  	border-right-color: var(--main-colour);
+  	transition: width 0.3s ease, height 0.3s ease 0.3s;
+  	animation-name: red-to-green-right-top;
+  	animation-duration: 1.5s;
+  	animation-delay: 1s;
+  	animation-fill-mode: forwards;
+}
+
+form[action="#"] button:focus::after,
+form[action="#"] button:hover::after,
+form[action="#spinner"] button:focus::after,
+form[action="#spinner"] button:hover::after {
+    border-bottom-color: var(--main-colour);
+    border-left-color: var(--main-colour);
+    transition:
+    	border-color 0s ease-out 0.5s,
+    	width 0.3s ease 0.5s,
+		height 0.3s ease 0.75s;
+}
+
+form[action="#"] button:focus,
+form[action="#"] button:hover {
+	color: var(--green-correct);
+}
 
 form[action="#"] button:focus::after,
 form[action="#"] button:hover::after {
-    border-bottom-color: var(--main-colour); /* Make borders visible */
-    border-left-color: var(--main-colour);
-    transition:
-      border-color 0s ease-out 0.5s,
-      width 0.3s ease 0.5s,
-      height 0.3s ease 0.75s;
+	border-bottom-color: var(--main-colour);
+	border-left-color: var(--main-colour);
+	transition: border-color 0s ease-out 0.5s, width 0.3s ease 0.5s, height 0.3s ease 0.75s;
+	animation-name: red-to-green-bottom-left;
+	animation-duration: 1.5s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
 }
 
 button:focus,
@@ -374,12 +460,23 @@ button:hover {
 article figure a {
 	display: block;
 	margin-bottom: 1em;
-	font-weight: 700;
-	transition: all .3s ease;
+	font-weight: 900;
+	transition: 
+		color .3s ease,
+		text-decoration .3s ease;
+}
+
+article figure a:focus,
+article figure a:hover {
+	text-decoration: underline;
+}
+
+h1 a {
+	color: var(--font-color);
 }
 
 article a {
-	color: black;
+	color: var(--font-color);
 	transition: color .3s ease;
 	font-weight: 500;
 }
@@ -387,15 +484,13 @@ article a {
 body aside div a {
 	border-bottom: solid white 0.063em;;
 	transition: all .3s ease;
+	border-bottom: solid black 2px;
+	font-weight: 900;
 }
 
 body > span > div > article h2 a {
 	font-size: 1.25em;
 	line-height: .7em;
-}
-
-header nav ul li a {
-	border-bottom: none;
 }
 
 header nav ul li a:focus,
@@ -411,7 +506,8 @@ article a:hover {
 body aside div a:focus,
 body aside div a:hover {
 	color: var(--main-colour);
-	border-bottom: solid var(--main-colour) 0.063em;
+	border-bottom: solid var(--main-colour) 2px;
+	font-weight: 900;
 }
 
 
@@ -502,35 +598,53 @@ body > article > fieldset input[type="radio"] {
 
 #login:target form {
 	top: 0;
+	visibility: visible;
 }
 
 #spinner:target {
 	display: block;
 	position: fixed;
+	top: 18rem;
 	right: 0;
 	left: 0;
-	width: 25%;
-	border-radius: 2em;
 	margin: 0 auto;
-	top: 20em;
-	background-color: rgba(255,255,255,.8);
-	background: url(images/spinner.png) 0 0; 
-	animation: loader .8s infinite steps(8);
-	background-size: cover;
-	white-space: nowrap; 
-	overflow: hidden;
-	width: 6.250em; 
-	text-indent: 200%;
-	height: 6.250em;
-	-moz-transform: scale(-1, 1);
-	-webkit-transform: scale(-1, 1);
-	-o-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
-	transform: scale(-1, 1);
+	background-color: rgba(255,255,255,0);
 }
 
-@keyframes loader {
-	to { background-position: -50em 0; }
+#spinner:target > div {
+	background-color: #ffffff00;
+	display: block;
+	width: 75px;
+	height: 75px;
+	margin: 0 auto;
+	animation: rotate 1s infinite ease-in-out;
+}
+
+#spinner > div > div {
+	width: 15px;
+	height: 15px;
+	background-color: red;
+	border-radius: 10px;
+	margin: 0 auto;
+	display: block;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+@keyframes rotateBottom {
+	0% {
+		transform: rotate(180deg)
+	}
+	100% {
+		transform: rotate(540deg)
+	}
 }
 
 /* ===========================
@@ -580,6 +694,7 @@ body > div:nth-of-type(1) > form {
 	margin: 0 auto;
 	padding: 3em;
 	margin-top: 12em;
+	visibility: hidden;
 }
 
 body > div:nth-of-type(1) > form > a:nth-of-type(1) {
@@ -601,6 +716,7 @@ form a[rel="forgot"] {
 	display: block;
 	margin-top: 1em;
 	transition: all .3s ease;
+	color: black;
 }
 
 form a[rel="forgot"]:focus,
@@ -612,12 +728,14 @@ body > article > fieldset {
 	margin: 1em 0 .5em 0;
 	display: inline;
 	transition: 
-		box-shadow .3s ease .3s;
+		box-shadow .3s ease;
 }
 
 body > article > fieldset legend {
 	padding: 0 1em;
-	font-family: amarurgt;
+	font-family: 'Open Sans Light';
+	font-weight: 300;
+	text-align: center;
 }
 
 body > article > fieldset svg {
@@ -646,7 +764,7 @@ body > article > fieldset input[type="radio"]:checked + label svg {
 ========================= */
 
 div ol:nth-of-type(1) li {
-	background-color: var(--main-colour);
+	background-color: rgb(238, 238, 238);
 	padding: 1em;
 	margin: 1em 0;
 	border-radius: 1em;
@@ -702,42 +820,31 @@ section {
 			ARTICLES
 ============================= */
 
-article p {
-	line-height: 1.4em;
+body > aside > div > p > span {
+	font-family: 'Quantum';
 }
 
 article h2 a,
 article h3 a,
 article h2 a span {
-	color: black;
-	border-bottom: .1em solid transparent;
+	color: var(--font-color);
 	transition: 
-	color .3s ease .3s,
-	border-bottom .3s ease;
+	color .3s ease;
 	margin-bottom: .1em;
 	display: block;
-	position: relative;
 	padding-bottom: .1em;
 }
 
-article h2 a::after,
-article h3 a::after {
-	position: absolute;
-	bottom: 0;
-	box-sizing: inherit;
-	content: '';
-	width: 100%;
-	height: .1em;
-	left: 0;
-	background-color: black;
-	width: 0;
-	transition: 
-		width .3s ease,
-		background-color .3s ease .3s;
+article h2 a {
+	font-size: 4rem;
 }
 
 article h2 a span {
 	display: inline;
+}
+
+section article img {
+	width: 100%;
 }
 
 article h3 a:focus::after,
@@ -754,11 +861,16 @@ article h2 a:hover span {
 }
 
 article img {
-	width: 100%;
+	width: 75%;
+	margin: 0 auto;
+	display: block;
 }
 
 article h3 {
 	font-size: 1.25em;
+	letter-spacing: 5px;
+	text-align: center;
+	line-height: 1.9rem;
 }
 
 article {
@@ -826,10 +938,6 @@ body > span {
 	position: relative;
 }
 
-body article h2 a span {
-	font-family: Olivia;
-}
-
 body > span > div > article h1 {
 	font-size: 1.563em;
 }
@@ -837,6 +945,13 @@ body > span > div > article h1 {
 body > span > div > article h2 {
 	line-height: .7em;
 	margin-bottom: .3em;
+	font-size: 1rem;
+	margin-top: 1rem;
+	text-align: left;
+}
+
+body > span > div > article h2 > a {
+	font-family: 'Open Sans Light';
 }
 
 body > span > div > article,
@@ -957,6 +1072,56 @@ div ol:nth-of-type(1) form label,
 	display: none;
 }
 
+section article h3 {
+	letter-spacing: 0;
+	color: white;
+	margin-bottom: .7rem;
+}
+
+section article h3 a {
+	color: white;
+}
+
+section article figure figcaption p {
+	color: white;
+	text-align: center;
+	margin-bottom: 0;
+	margin-top: .8rem;
+}
+
+section article h3 a:hover,
+section article h3 a:focus {
+	color: black;;
+}
+
+section article a {
+	background-color: rgb(233, 233, 233);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+	padding: 1rem;
+	display: block;
+	border-radius: 10px;
+	transition: 
+		transform .3s ease-in-out,
+		background-color .3s ease-in-out;
+}
+
+section article a h3,
+section article a p {
+	color: black !important;
+	transition: color .3s ease-in-out;
+}
+
+section article a:hover,
+section article a:focus {
+	transform: scale(1.08);
+	background-color: #EB1a28;
+}
+section article a:hover h3,
+section article a:hover p,
+section article a:focus h3,
+section article a:focus p {
+	color: white !important;
+}
 
 @media screen and (min-width: 62.750rem) {
 	body main article:nth-of-type(2) {
@@ -972,8 +1137,7 @@ div ol:nth-of-type(1) form label,
 	}
 
 	main {
-		grid-template-columns: 60% calc(40% - 1em);
-		grid-column-gap: 1em;
+		grid-template-columns: 100%;
 		margin-top: 8rem;
 	}
 
@@ -989,9 +1153,6 @@ div ol:nth-of-type(1) form label,
 		position: fixed;
 		top: 0;
 		width: 100vw;
-		-webkit-box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
-		moz-box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
-		box-shadow: 0 1.250em 2.188em 0 rgba(0,0,0,0.3);
 	}
 
 	header nav {
@@ -1014,7 +1175,7 @@ div ol:nth-of-type(1) form label,
 		flex-direction: row;
 		margin: 0;
 		justify-content: space-between;
-		margin-top: .3em;
+		margin-top: 1.3em;
 		position: absolute;
 		right: 0;
 		margin-right: 3.7em;
@@ -1047,12 +1208,12 @@ div ol:nth-of-type(1) form label,
 		padding: 2em;
 		height: 6em;
 		width: auto;
-		top: 3.27em;
-		background-color: white;
+		top: 2em;
+		background-color: rgb(255, 255, 255);
 		margin: 0 auto;
 		display: block;
-		box-shadow: 0 1.125em 1em -0.500em rgba(0, 0, 0, 0.616);
-		right: 62%;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4);
+		right: 34.5%;
 		animation-name: headerAnimation;
 		animation-duration: .8s;
 	}
@@ -1068,8 +1229,8 @@ div ol:nth-of-type(1) form label,
 	}
 
 	section {
-		grid-template-columns: calc(25% - .75em) calc(25% - .75em) calc(25% - .75em) calc(25% - .75em);
-		grid-column-gap: 1em;
+		grid-template-columns: calc(33.333% - 1.25em) calc(33.3333% - 1.25em) calc(33.3333% - 1.25em);
+		grid-column-gap: 2em;
 		max-width: 75vw;
 		margin: 0 auto;
 	}
@@ -1104,7 +1265,7 @@ div ol:nth-of-type(1) form label,
 
 	body > article > fieldset legend {
 		padding: 0 1em;
-		font-size: 1.250em;
+		font-size: 1em;
 	}
 
 	/* =========================
@@ -1166,7 +1327,7 @@ div ol:nth-of-type(1) form label,
 
 	header nav ul li ul li a:hover, 
 	header nav ul li ul li a:focus {
-		color: var(--main-colour);
+		color: rgb(255, 0, 0);
 	}
 
 }
@@ -1178,11 +1339,11 @@ div ol:nth-of-type(1) form label,
 	========================== */
 
 	main {
-		width: 75vw;
+		width: 50vw;
 		margin: 0 auto;
-		grid-template-columns: 65% calc(35% - 1em);
-		grid-column-gap: 1em;
+		grid-template-columns: 100%;
 		display: grid;
-		margin-top: 8em;
+		margin-top: 4rem;
+		margin-bottom: 7rem;
 	}
 }
